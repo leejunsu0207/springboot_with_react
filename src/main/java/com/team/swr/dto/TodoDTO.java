@@ -1,10 +1,13 @@
 package com.team.swr.dto;
 
+import com.team.swr.model.SrEntity;
 import com.team.swr.model.TodoEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 //@Builder
 @NoArgsConstructor
@@ -15,6 +18,8 @@ public class TodoDTO {
     private String id;
     private String title;
     private boolean done;
+
+    private List<SrDTO> srDto;
 
     public TodoDTO(final TodoEntity entity) {
         this.id = entity.getId();
@@ -29,7 +34,6 @@ public class TodoDTO {
                 .done(dto.isDone())
                 .build();
     }
-
 
 
 }

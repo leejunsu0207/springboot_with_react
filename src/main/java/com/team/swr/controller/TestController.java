@@ -1,16 +1,30 @@
 package com.team.swr.controller;
 
 import com.team.swr.dto.ResponseDTO;
-import com.team.swr.dto.TestRequestBodyDTO;
+import com.team.swr.dto.SrDTO;
+import com.team.swr.dtoTest.TestDTO0;
+import com.team.swr.dtoTest.TestDTO1;
+import com.team.swr.dtoTest.TestRequestBodyDTO;
+import com.team.swr.model.SrEntity;
+import com.team.swr.model.Test0Entity;
+import com.team.swr.model.Test1Entity;
+import com.team.swr.service.TestService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("test") // 리소스
 public class TestController {
+
+    TestService testService;
+
+    public TestController(TestService testService) {
+        this.testService = testService;
+    }
 
     @GetMapping("/testGetMapping")
     public String testController(){
@@ -48,6 +62,33 @@ public class TestController {
         ResponseDTO<String> response = ResponseDTO.<String>builder().data(list).build();
         // http status 400 return
         return ResponseEntity.badRequest().body(response);
+
+    }
+
+
+    @GetMapping("/test0")
+    public ResponseEntity<?> retrieveAll0() {
+
+        List<Test0Entity> entities = testService.retrieveTest0();
+
+        List<TestDTO0> dtos = entities.stream().map(TestDTO0::new).collect(Collectors.toList());
+
+        ResponseDTO<TestDTO0> response = ResponseDTO.<TestDTO0>builder().data(dtos).build();
+
+        return ResponseEntity.ok().body(response);
+
+    }
+
+    @GetMapping("/test1")
+    public ResponseEntity<?> retrieveAll1() {
+
+        List<Test1Entity> entities = testService.retrieveTest1();
+
+        List<TestDTO1> dtos = entities.stream().map(TestDTO1::new).collect(Collectors.toList());
+
+        ResponseDTO<TestDTO1> response = ResponseDTO.<TestDTO1>builder().data(dtos).build();
+
+        return ResponseEntity.ok().body(response);
 
     }
 
