@@ -40,26 +40,26 @@ public class SrEntity {
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
     @Column(name = "SRID")
     private String srId;    // srId
-    @Column(name = "USERID", nullable = false)
+    @Column(name = "USERID", nullable = true)
     private String userId; // object create user id
-    @Column(name = "ORGCD", nullable = false)
+    @Column(name = "ORGCD", nullable = true)
     private String orgCd;   // 기관 코드
-    @Column(name = "ORGNM", nullable = false)
+    @Column(name = "ORGNM", nullable = true)
     private String orgNm;   // 기관 명
-    @Column(name = "PROC", nullable = false)
+    @Column(name = "PROC", nullable = true)
     private String proc;   // 진행상태
-    @Column(name = "RECEIVER", nullable = false)
+    @Column(name = "RECEIVER", nullable = true)
     private String receiver;    // 수신자
-    @Column(name = "CALLER", nullable = false)
+    @Column(name = "CALLER", nullable = true)
     private String caller;  // 발신자
-    @Column(name = "MGT", nullable = false)
+    @Column(name = "MGR", nullable = true)
     private String mgr; // 처리자
-    @Column(name = "CONSDAY", nullable = false)
+    @Column(name = "CONSDAY", nullable = true)
     private String consDay; // 상담일
-    @Column(name = "PROCDAY", nullable = false)
+    @Column(name = "PROCDAY", nullable = true)
     private String procDay; // 처리일
     @Lob
-    @Column(name = "CONSDETAIL", nullable = false)
+    @Column(name = "CONSDETAIL", nullable = true)
     private String consDetail;  // 상담내역
     @Lob
     @Column(name = "PROCDETAIL")

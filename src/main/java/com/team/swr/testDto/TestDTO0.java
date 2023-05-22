@@ -1,6 +1,6 @@
-package com.team.swr.dtoTest;
+package com.team.swr.testDto;
 
-import com.team.swr.model.Test0Entity;
+import com.team.swr.model.testModel.Test0Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

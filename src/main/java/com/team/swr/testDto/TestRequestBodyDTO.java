@@ -1,4 +1,4 @@
-package com.team.swr.dtoTest;
+package com.team.swr.testDto;
 
 import lombok.Data;
 

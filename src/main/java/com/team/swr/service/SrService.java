@@ -1,9 +1,9 @@
 package com.team.swr.service;
 
 import com.team.swr.model.SrEntity;
-import com.team.swr.model.TodoEntity;
 import com.team.swr.persistence.SrRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,12 +22,16 @@ public class SrService {
 
     public List<SrEntity> retrieveAll(){
         log.info("retrieveAll");
-        return srRepository.findAll();
+        return srRepository.findAll(Sort.by(Sort.Direction.DESC, "consDay"));
     }
 
-    public List<SrEntity> retrieveOrgCd(){
+    public List<SrEntity> retrieveOrgCd(String orgCd){
         log.info("retrieveOrgCd");
-        return srRepository.findAll();
+        return srRepository.findAllByOrgCd(orgCd);
+    }
+
+    public Optional<SrEntity> findOneById(String srId){
+        return srRepository.findById(srId);
     }
 
     public List<SrEntity> create(final SrEntity entity){

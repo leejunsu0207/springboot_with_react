@@ -1,8 +1,7 @@
 package com.team.swr.service;
 
-import com.team.swr.model.SrEntity;
-import com.team.swr.model.Test0Entity;
-import com.team.swr.model.Test1Entity;
+import com.team.swr.model.testModel.Test0Entity;
+import com.team.swr.model.testModel.Test1Entity;
 import com.team.swr.persistence.Test0Repository;
 import com.team.swr.persistence.Test1Repository;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +31,7 @@ public class TestService {
         return test1Repository.findAll();
     }
 
-    
+
 
 
 

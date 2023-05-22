@@ -1,4 +1,4 @@
-package com.team.swr.model;
+package com.team.swr.model.testModel;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

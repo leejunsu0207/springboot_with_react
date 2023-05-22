@@ -1,13 +1,11 @@
-package com.team.swr.controller;
+package com.team.swr.testController;
 
 import com.team.swr.dto.ResponseDTO;
-import com.team.swr.dto.SrDTO;
-import com.team.swr.dtoTest.TestDTO0;
-import com.team.swr.dtoTest.TestDTO1;
-import com.team.swr.dtoTest.TestRequestBodyDTO;
-import com.team.swr.model.SrEntity;
-import com.team.swr.model.Test0Entity;
-import com.team.swr.model.Test1Entity;
+import com.team.swr.testDto.TestDTO0;
+import com.team.swr.testDto.TestDTO1;
+import com.team.swr.testDto.TestRequestBodyDTO;
+import com.team.swr.model.testModel.Test0Entity;
+import com.team.swr.model.testModel.Test1Entity;
 import com.team.swr.service.TestService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
